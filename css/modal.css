@@ -6,6 +6,28 @@
   z-index: 1000;
 }
 
+.cmodal.hide .modal-overlay,
+.cmodal.hide .modal-window {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.cmodal.open .modal-window {
+  transform: translateY(100px);
+}
+
+.cmodal.open .modal-overlay {
+  background: rgba(0, 0, 0, .5);
+}
+
+.cmodal.hide .modal-window {
+  transform: translateY(-200px);
+}
+
+.cmodal.hide .modal-overlay {
+  background: rgba(0, 0, 0, 0);
+}
+
 .modal-window, .modal-overlay {
   opacity: 0;
   z-index: -1;
@@ -17,14 +39,17 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0);
+  transition: background .2s ease-in;
 }
 
 .modal-window {
   width: 600px;
   border-radius: 5px;
   background: #fff;
-  margin: 100px auto;
+  margin: 0 auto;
+  transform: translateY(-200px);
+  transition: transform .2s ease-in;
 }
 
 .modal-header {
