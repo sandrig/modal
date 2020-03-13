@@ -50,8 +50,13 @@ const priceModal = $.modal({
 document.addEventListener('click', event => {
   event.preventDefault()
   const btnType = event.target.dataset.btn
+  const id = +event.target.dataset.id
 
   if (btnType === 'price') {
+    const fruit = fruits.find(f => f.id === id)
+    priceModal.setContent(`
+      <p>Цена на ${fruit.title}: <strong>${fruit.price}$</strong></p>
+    `)
     priceModal.open()
   }
 })
