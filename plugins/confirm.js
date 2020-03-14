@@ -5,6 +5,9 @@ $.confirm = function (options) {
       width: '400px',
       closable: false,
       content: options.content,
+      onClose() {
+        modal.destroy()
+      },
       footerButtons: [
         {
           text: 'Отмена', type: 'secondary', handler() {
